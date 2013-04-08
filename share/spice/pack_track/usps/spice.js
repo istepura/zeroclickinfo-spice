@@ -1,5 +1,5 @@
 (function (root) {
-    "use strict"
+    "use strict";
 
     root.ddg_spice_pack_track_usps = function (xml) {
         var resp;
@@ -56,7 +56,7 @@
 
             nra(items);
         }
-    }
+    };
 
 }(this));
 
