@@ -6,13 +6,13 @@
 
         function buildrow(rd){
             var doc  = "";
-            doc += "<tr><td>";
+            doc += "<tr><td> "
             doc += rd.getElementsByTagName("EventDate")[0].childNodes[0].nodeValue;
             doc += ", ";
             doc += rd.getElementsByTagName("EventTime")[0].childNodes[0].nodeValue; 
-            doc += "</td><td>";
+            doc += " </td>  <td> ";
             doc += rd.getElementsByTagName("Event")[0].childNodes[0].nodeValue; 
-            doc += "</td><td>";
+            doc += " </td><td> ";
             doc += rd.getElementsByTagName("EventZIPCode")[0].childNodes[0].nodeValue;
             doc += ", ";
             doc +=rd.getElementsByTagName("EventCity")[0].childNodes[0].nodeValue;
@@ -36,16 +36,16 @@
             var trackinfos = resp.getElementsByTagName('TrackInfo');
 
             for (var i = 0; i < trackinfos.length; i++) {
+                doc += '<table border="1">';
+                doc += buildrow(trackinfos[i].getElementsByTagName("TrackSummary")[0]);
                 var tds = trackinfos[i].getElementsByTagName("TrackDetail");
                 if (tds.length > 0){
                     doc += trackinfos[i].getAttribute('ID');
-                    doc += '<table border="1">';
-                    doc += buildrow(trackinfos[i].getElementsByTagName("TrackSummary")[0]);
                     for (var j = 0; j < tds.length; j++){
                         doc += buildrow(tds[j]);
                     }
-                    doc += "</table>";
                 }
+                doc += "</table>";
             }
             var div = d.createElement('div');
             div.innerHTML = doc;
