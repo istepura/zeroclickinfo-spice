@@ -1,0 +1,23 @@
+
+#spice_usps table {
+    /* border:1px solid #d0d0d0; */
+    width:100%;
+    margin:5px;
+}
+
+#spice_usps tr {
+    border-bottom:1px solid #efefef;
+}
+
+#spice_usps th {
+    vertical-align:bottom;
+    text-align:left;
+    font-size:83.3%;
+    font-style:italic;
+    padding-left:3px;
+}
+
+#spice_usps td {
+    padding:2px;
+    max-width:250px;
+}

@@ -10,6 +10,8 @@ triggers query_nowhitespace => qr/(\b\d{30}\b)|(\b\d{20}\b)|^E\D{1}\d{9}\D{2}$|^
 
 spice wrap_string_callback => 1;
 
+spice is_cached => 0;
+
 handle query_nowhitespace => sub {
     my ($id) = $_;
 
