@@ -1,3 +1,5 @@
+//nrj("/js/spice/pack_track/pack_track.js", true);
+
 function ddg_spice_pack_track_usps(api_result){
 
     if (!api_result) return;
@@ -20,13 +22,6 @@ function ddg_spice_pack_track_usps(api_result){
             })(jsondata);
     xmlresp.find( "TrackSummary, TrackDetail" ).each( buildrow );
 
-    Spice.render({
-        data             : { rows : jsondata},
-        header1          :  $(xmlresp.find("TrackInfo")).attr("ID"), 
-        source_url       : "usps.com",
-        source_name      : 'USPS',
-        template_normal  : 'usps',
-        force_big_header : false 
-    });
+    ddg_spice_pack_track_render(  $(xmlresp.find("TrackInfo")).attr("ID"), jsondata, 'USPS', 'http://www.usps.com');
 }
 
